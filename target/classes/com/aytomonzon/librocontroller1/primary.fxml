@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
 
 <VBox alignment="CENTER" minHeight="400.0" minWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aytomonzon.librocontroller1.PrimaryController">
    <children>
@@ -46,6 +47,84 @@
                 </children>
             </VBox>
          </left>
+         <center>
+            <VBox spacing="10" alignment="CENTER">
+                <children>
+                    <HBox spacing="10" alignment="CENTER">
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card1" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip1" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre1" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version1" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card2" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip2" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre2" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version2" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER">
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card3" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip3" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre3" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version3" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card4" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip4" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre4" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version4" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER">
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card5" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip5" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre5" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version5" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card6" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip6" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre6" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version6" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="10" alignment="CENTER">
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card7" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip7" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre7" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version7" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                        <VBox style="-fx-border-color: #cccccc; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;" alignment="CENTER" prefWidth="120" prefHeight="90">
+                            <children>
+                                <Label fx:id="card8" text="" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                                <Label fx:id="ip8" text="IP: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="nombre8" text="Nombre: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                                <Label fx:id="version8" text="Version: " style="-fx-font-size: 12; -fx-alignment: CENTER_LEFT; -fx-text-alignment: left; -fx-label-padding: 0 0 0 5;" />
+                            </children>
+                        </VBox>
+                    </HBox>
+                </children>
+            </VBox>
+         </center>
          <right>
             <TextArea fx:id="textArea" editable="false" prefHeight="541.0" prefWidth="225.0" style="-fx-control-inner-background: #f0f0f0;" wrapText="true" BorderPane.alignment="CENTER" />
          </right>
