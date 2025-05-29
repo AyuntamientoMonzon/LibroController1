@@ -1,6 +1,8 @@
 package com.aytomonzon.librocontroller1;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.prefs.Preferences;
 
 import javafx.fxml.FXML;
@@ -138,15 +140,16 @@ public class PrimaryController {
 
     private void appendMultiline(String text) {
         StringBuilder sb = new StringBuilder();
+        String hora = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
         if (text.startsWith("-")) {
             int start = 0;
             while (start < text.length()) {
                 int end = Math.min(start + MAX_LINE_LENGTH, text.length());
-                sb.append(text, start, end).append("\n");
+                sb.append("[").append(hora).append("] ").append(text.substring(start, end)).append("\n");
                 start = end;
             }
         } else {
-            sb.append(text).append("\n");
+            sb.append("[").append(hora).append("] ").append(text).append("\n");
         }
         // Insertar al principio del TextArea
         String current = textArea.getText();
@@ -168,50 +171,67 @@ public class PrimaryController {
                 }
             }
         }
-        // Solo cambiar color si mensaje es Hola o Adios
+        // Solo cambiar color si mensaje es Hola o Adios, o si el borde está en gris y llega cualquier mensaje
         String borderColor = null;
         if ("Hola".equalsIgnoreCase(mensaje)) borderColor = "#4CAF50"; // verde
         else if ("Adios".equalsIgnoreCase(mensaje)) borderColor = "#F44336"; // rojo
+        // Si el mensaje no es Hola ni Adios, pero el borde está en gris, ponerlo en verde
         if (hostname != null) {
             if (hostname.equals(puesto1.getText())) {
                 ip1.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre1.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version1.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card1.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card1.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto2.getText())) {
                 ip2.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre2.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version2.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card2.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card2.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto3.getText())) {
                 ip3.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre3.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version3.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card3.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card3.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto4.getText())) {
                 ip4.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre4.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version4.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card4.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card4.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto5.getText())) {
                 ip5.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre5.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version5.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card5.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card5.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto6.getText())) {
                 ip6.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre6.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version6.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card6.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card6.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto7.getText())) {
                 ip7.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre7.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version7.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card7.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card7.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto8.getText())) {
                 ip8.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre8.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version8.setText("Version: " + (version != null ? version : ""));
+                String currentStyle = ((javafx.scene.layout.VBox) card8.getParent()).getStyle();
+                if (borderColor == null && (currentStyle == null || currentStyle.contains("#cccccc"))) borderColor = "#4CAF50";
                 if (borderColor != null) card8.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             }
         }
