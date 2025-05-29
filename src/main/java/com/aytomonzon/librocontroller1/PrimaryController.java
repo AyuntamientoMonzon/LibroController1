@@ -125,6 +125,15 @@ public class PrimaryController {
         ip6.setText("IP: "); nombre6.setText("Nombre: "); version6.setText("Version: ");
         ip7.setText("IP: "); nombre7.setText("Nombre: "); version7.setText("Version: ");
         ip8.setText("IP: "); nombre8.setText("Nombre: "); version8.setText("Version: ");
+        // Bordes grises por defecto
+        card1.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card2.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card3.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card4.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card5.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card6.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card7.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
+        card8.getParent().setStyle("-fx-border-color: #cccccc; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
     }
 
     private void appendMultiline(String text) {
@@ -146,7 +155,7 @@ public class PrimaryController {
         // Procesar mensaje multicast para actualizar cards
         // Formato esperado: hostname=INF01;ipv4=192.168.5.107;usuario=admin;mensaje=Hola;version=2.0
         String[] parts = text.trim().split(";");
-        String hostname = null, ipv4 = null, usuario = null, version = null;
+        String hostname = null, ipv4 = null, usuario = null, version = null, mensaje = null;
         for (String part : parts) {
             String[] kv = part.split("=", 2);
             if (kv.length == 2) {
@@ -155,42 +164,55 @@ public class PrimaryController {
                     case "ipv4": ipv4 = kv[1].trim(); break;
                     case "usuario": usuario = kv[1].trim(); break;
                     case "version": version = kv[1].trim(); break;
+                    case "mensaje": mensaje = kv[1].trim(); break;
                 }
             }
         }
+        // Solo cambiar color si mensaje es Hola o Adios
+        String borderColor = null;
+        if ("Hola".equalsIgnoreCase(mensaje)) borderColor = "#4CAF50"; // verde
+        else if ("Adios".equalsIgnoreCase(mensaje)) borderColor = "#F44336"; // rojo
         if (hostname != null) {
             if (hostname.equals(puesto1.getText())) {
                 ip1.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre1.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version1.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card1.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto2.getText())) {
                 ip2.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre2.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version2.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card2.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto3.getText())) {
                 ip3.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre3.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version3.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card3.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto4.getText())) {
                 ip4.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre4.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version4.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card4.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto5.getText())) {
                 ip5.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre5.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version5.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card5.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto6.getText())) {
                 ip6.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre6.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version6.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card6.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto7.getText())) {
                 ip7.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre7.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version7.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card7.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             } else if (hostname.equals(puesto8.getText())) {
                 ip8.setText("IP: " + (ipv4 != null ? ipv4 : ""));
                 nombre8.setText("Nombre: " + (usuario != null ? usuario : ""));
                 version8.setText("Version: " + (version != null ? version : ""));
+                if (borderColor != null) card8.getParent().setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: 2; -fx-background-color: #f9f9f9; -fx-padding: 10; -fx-border-radius: 8; -fx-background-radius: 8;");
             }
         }
     }
